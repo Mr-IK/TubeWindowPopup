@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+この拡張を作成するにあたり
+RyotaK氏のTubeWindow(https://github.com/Ry0taK/TubeWindow)、並びに
+swen128氏のYoutube-Live-Chat-Filter(https://github.com/swen128/youtube-live-chat-filter)
+を参考にさせていただきました。
+この場を借りてお礼申し上げます。
+ -->
+  <head>
+		<meta charset="utf-8">
+		<title>メニュー - TubeWindowPopup</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+		<link rel="stylesheet" href="popup.css">
+	</head>
+	<body>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100">
+	    <header class="mdl-layout__header mdl-layout__header--scroll">
+	      <div class="mdl-layout__header-row">
+	        <span class="mdl-layout-title">TubeWindowPopup メニュー</span>
+	      </div>
+	    </header>
+	    <main class="mdl-layout__content">
+	      <div class="content">
+	        <div class="mdl-textfield mdl-js-textfield">
+	                  <textarea id="URL-list" class="mdl-textfield__input" rows="22"
+	                            placeholder="Youtube動画のURLを一行ごとに入力"></textarea>
+	        </div>
+
+	        <div class="button-area">
+						<button id="this-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">このページを開く
+						</button>
+	          <button id="open-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">URLリストから開く
+	          </button>
+	        </div>
+
+	        <div id="save-notifier" aria-live="assertive" aria-atomic="true" aria-relevant="text"
+	             class="mdl-snackbar mdl-js-snackbar">
+	          <div class="mdl-snackbar__text"></div>
+	          <button type="button" class="mdl-snackbar__action"></button>
+	        </div>
+	      </div>
+	    </main>
+	  </div>
+
+		<script src="popup.js"></script>
+	</body>
+</html>
