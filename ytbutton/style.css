@@ -1,0 +1,43 @@
+#twp-button {
+border: solid 1px #c0c0c0;
+color: #fffaf0;
+background: #224177;
+cursor: pointer;
+}
+
+#twp-icon-button {
+display: inline-block;
+color: white;
+font-size: 14px;
+text-align: center;
+cursor: pointer;
+}
+
+.twp-ytp-right {
+position: relative;
+top: -11px;
+width: 32px;
+height: 32px;
+margin-left: 10px;
+font-weight: 600;
+line-height: 32px;
+border-radius: 1px;
+}
+
+.twp-ytp-offline {
+  position: relative;
+  background: #224177;
+  top: 0px !important;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  font-weight: 600;
+  line-height: 32px;
+  border-radius: 1px;
+}
+
+span.ytp-offline-slate-buttons>div {
+  display: inline-block !important;
+  position: relative;
+  top: -4px;
+}
