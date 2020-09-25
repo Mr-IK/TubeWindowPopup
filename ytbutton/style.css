@@ -1,7 +1,14 @@
-#twp-button {
+.twp-button-dark {
 border: solid 1px #c0c0c0;
 color: #fffaf0;
 background: #224177;
+cursor: pointer;
+}
+
+.twp-button{
+border: solid 1px #c0c0c0;
+color: #224177;
+background: #fffaf0;
 cursor: pointer;
 }
 
@@ -24,9 +31,22 @@ line-height: 32px;
 border-radius: 1px;
 }
 
-.twp-ytp-offline {
+.twp-ytp-offline-dark {
   position: relative;
   background: #224177;
+  top: 0px !important;
+  width: 32px;
+  height: 32px;
+  margin-left: 10px;
+  font-weight: 600;
+  line-height: 32px;
+  border-radius: 1px;
+}
+
+.twp-ytp-offline{
+  position: relative;
+  color: #224177;
+  background: #fffaf0;
   top: 0px !important;
   width: 32px;
   height: 32px;
