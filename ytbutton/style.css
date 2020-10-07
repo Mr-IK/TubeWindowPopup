@@ -1,12 +1,12 @@
 .twp-button-dark {
-border: solid 1px #c0c0c0;
+/* border: solid 1px #c0c0c0; */
 color: #fffaf0;
 background: #224177;
 cursor: pointer;
 }
 
 .twp-button{
-border: solid 1px #c0c0c0;
+/* border: solid 1px #c0c0c0; */
 color: #224177;
 background: #fffaf0;
 cursor: pointer;
@@ -14,7 +14,6 @@ cursor: pointer;
 
 #twp-icon-button {
 display: inline-block;
-color: white;
 font-size: 14px;
 text-align: center;
 cursor: pointer;
@@ -33,6 +32,7 @@ border-radius: 1px;
 
 .twp-ytp-offline-dark {
   position: relative;
+  color: #fffaf0;
   background: #224177;
   top: 0px !important;
   width: 32px;

@@ -31,21 +31,24 @@
       isDark2 = true;
     }
 
-    if(!isDark2){
+    if(!isDark2&&isDark){
       var getTwpButtons = document.getElementsByClassName('twp-button-dark');
       if(getTwpButtons!=null){
         Array.prototype.forEach.call(getTwpButtons, dismissable => {
           dismissable.className = 'twp-button'
         })
       }
-    }else{
+      isDark = false;
+    }else if(isDark2&&!isDark){
       var getTwpButtons = document.getElementsByClassName('twp-button');
       if(getTwpButtons!=null){
         Array.prototype.forEach.call(getTwpButtons, dismissable => {
           dismissable.className = 'twp-button-dark'
         })
       }
+      isDark = true;
     }
+    addQuickButton()
   }
 
   const addQuickButton = () => {
@@ -63,14 +66,12 @@
   }
 
   const observeContent = () => {
-    addQuickButton()
     checkDarkTheme()
     // オブザーバインスタンスを作成
     let contents = document.querySelectorAll('div#contents')
     for (content of contents) {
       if (content.getAttribute('observe') !== true) {
         const observer = new MutationObserver(() => {
-          addQuickButton()
           checkDarkTheme()
         })
         const config = {
@@ -85,14 +86,12 @@
   observeContent()
   document.body.addEventListener('yt-page-data-updated', () => {
     setTimeout(() => {
-      addQuickButton()
       checkDarkTheme()
-    } , 200)
+    } , 500)
   })
   document.addEventListener('yt-service-request-completed', () => {
     setTimeout(() => {
-      addQuickButton()
       checkDarkTheme()
-    } , 200)
+    } , 500)
   })
 }())

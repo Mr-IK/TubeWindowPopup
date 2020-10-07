@@ -25,6 +25,15 @@ pipopa氏のNmado-Quick(https://github.com/pipopa/NMado-Quick)
 	    </header>
 	    <main class="mdl-layout__content">
 	      <div class="content">
+          <div>ウィンドウサイズ設定: 
+            <select id="window-size" onChange="changeWindowSize();">
+              <option id="560x315" value="560x315">560 × 315</option>
+              <option id="640x480" value="640x480">640 × 480 (4:3)</option>
+              <option id="720x405" value="720x405">720 × 405</option>
+              <option id="1024x576" value="1024x576">1024 × 576</option>
+              <option id="1280x720" value="1280x720">1280 × 720</option>
+            </select>
+          </div>
 	        <div class="mdl-textfield mdl-js-textfield">
 	                  <textarea id="URL-list" class="mdl-textfield__input" rows="22"
 	                            placeholder="Youtube動画のURLを一行ごとに入力"></textarea>
@@ -33,8 +42,6 @@ pipopa氏のNmado-Quick(https://github.com/pipopa/NMado-Quick)
 	        <div class="button-area">
 	          <button id="open-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">URLリストから開く
 	          </button>
-            <button id="this-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">設定画面を開く
-						</button>
 	        </div>
 
 	        <div id="save-notifier" aria-live="assertive" aria-atomic="true" aria-relevant="text"

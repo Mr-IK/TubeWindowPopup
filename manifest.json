@@ -12,6 +12,7 @@
   "permissions": [
     "tabs",
     "contextMenus",
+    "storage",
     "https://www.youtube.com/*"
   ],
   "icons": {

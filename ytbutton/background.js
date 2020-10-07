@@ -1,6 +1,11 @@
+const windowSizeKey = 'windowSizeKey';
+
 const sendYoutubeId = (youtubeId) => {
   if(youtubeId){
-    window.open(`https://www.youtube.com/embed/${youtubeId}`,'_blank','width=560,height=315');
+    chrome.storage.local.get(windowSizeKey, value => {
+      const strs = value.windowSizeKey.split('x');
+      window.open(`https://www.youtube.com/embed/${youtubeId}`,'_blank','width='+strs[0]+',height='+strs[1]);
+    });
   }else{
     return;
   }
@@ -23,4 +28,4 @@ chrome.contextMenus.onClicked.addListener((info, _tab) => {
 
 chrome.runtime.onMessage.addListener((message, _sender) => {
   sendYoutubeId(message.youtubeId)
-})
+});

@@ -24,8 +24,14 @@
       ytpRight.insertBefore(quickButton, ytpRight.firstChild)
     }
     if (ytpOfflineSlateButton && !ytpOfflineSlateButton.querySelector('#twp-icon-button')) {
-      const quickButton = createQuickButton('twp-ytp-offline')
-      ytpOfflineSlateButton.appendChild(quickButton)
+      var html = document.getElementsByTagName('html')[0]
+      if(html.getAttribute('dark') == 'true'){
+        const quickButton = createQuickButton('twp-ytp-offline-dark')
+        ytpOfflineSlateButton.appendChild(quickButton)
+      }else{
+        const quickButton = createQuickButton('twp-ytp-offline')
+        ytpOfflineSlateButton.appendChild(quickButton)
+      }
     }
   }
 
