@@ -36,25 +36,23 @@ function setWindowSize(){
 
 document.getElementById("open-button").addEventListener("click", function(){
 	const inputData = document.querySelector('#URL-list').value;
-	const urls = inputData.split('\n').filter(x => x !== '');
-	var count = 0;
-	for(var i=0, len=urls.length|0; i<len; i=i+1|0){
-		let id = parseURL(urls[i]);
-		if(id){
-			chrome.storage.local.get(windowSizeKey, value => {
-		  	const strs = value.windowSizeKey.split('x');
-		  	window.open(`https://www.youtube.com/embed/${id}`,'_blank','width='+strs[1]+',height='+strs[0]);
-		  });
-			count++;
-		}
-	}
-	const snackbar = document.querySelector('#save-notifier').MaterialSnackbar;
-	snackbar.showSnackbar({
-		message: count+'件の動画を開きました！',
-		timeout: 3000,
-	});
+	chrome.runtime.sendMessage({youtubeId: inputData,
+	                            type: 'open'});
 	document.querySelector('#URL-list').value = "";
 });
+
+document.getElementById("menu-button").addEventListener("click", function(){
+	openMenu();
+});
+
+function openMenu() {
+    url = "menubar.html";
+    var win = window.open(url, "_blank", 'width=810,height=120,scrollbars=no');
+		win.focus();
+		window.focus();
+		window.blur();
+		win.focus();
+}
 
 window.addEventListener('load', function() {
 	chrome.tabs.getSelected(tab=>{  // 現在のタブを取得

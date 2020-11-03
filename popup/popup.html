@@ -10,7 +10,7 @@ pipopa氏のNmado-Quick(https://github.com/pipopa/NMado-Quick)
  -->
   <head>
 		<meta charset="utf-8">
-		<title>メイン - TubeWindowPopup V1.5</title>
+		<title>メイン - TubeWindowPopup v2.0</title>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 		<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -20,12 +20,12 @@ pipopa氏のNmado-Quick(https://github.com/pipopa/NMado-Quick)
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-color--grey-100">
 	    <header class="mdl-layout__header mdl-layout__header--scroll">
 	      <div class="mdl-layout__header-row">
-	        <span class="mdl-layout-title">TubeWindowPopup V1.5 メニュー</span>
+	        <span class="mdl-layout-title">TubeWindowPopup v2.0 メニュー</span>
 	      </div>
 	    </header>
 	    <main class="mdl-layout__content">
 	      <div class="content">
-          <div>ウィンドウサイズ設定: 
+          <div>ウィンドウサイズ設定:
             <select id="window-size" onChange="changeWindowSize();">
               <option id="560x315" value="560x315">560 × 315</option>
               <option id="640x480" value="640x480">640 × 480 (4:3)</option>
@@ -41,6 +41,8 @@ pipopa氏のNmado-Quick(https://github.com/pipopa/NMado-Quick)
 
 	        <div class="button-area">
 	          <button id="open-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">URLリストから開く
+	          </button>
+            <button id="menu-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">一括操作バーを開く
 	          </button>
 	        </div>
 
