@@ -1,10 +1,7 @@
 {
   "name": "TubeWindowPopup",
-  "version": "2.0",
+  "version": "3.0",
   "description": "Youtube動画をポップアップ表示する拡張機能",
-  "browser_action": {
-    "default_popup": "popup/popup.html"
-  },
   "background": {
     "scripts": ["ytbutton/background.js"],
     "persistent": false

@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
 		<meta charset="utf-8">
-		<title>TWP v2.0 メニューバー</title>
+		<title>TWP v3.0 メニューバー</title>
 		<link rel="stylesheet" href="css/menubar.css">
 	</head>
 	<body style="overflow-x:hidden">
@@ -12,6 +12,13 @@
       <li><a id="mute-button">ミュート</a></li>
       <li><a id="unmute-button">ミュート解除</a></li>
       <li><a id="remove-button">ウィンドウ削除</a></li>
+    </ul>
+    <ul id="nav2">
+      <li><a id="refresh-button">動画位置を調整</a></li>
+      <input id="refresh-switch" type="checkbox" value="1"></input>
+      <label id="ref-switch" for="refresh-switch">位置自動調整:ON</label>
+      <input id="button-switch" type="checkbox" value="1"></input>
+      <label id="but-switch-lab" for="button-switch">ボタン機能:URL追加</label>
     </ul>
 		<script src="js/menubar.js"></script>
 	</body>

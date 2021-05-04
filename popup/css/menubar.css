@@ -11,7 +11,7 @@ body{
 }
 
 #nav li {
-  width: 140px;
+  width: 120px;
   text-align: center;
   background-color: #333;
   color: #fff;
@@ -22,13 +22,103 @@ body{
 }
 
 #nav li a {
+  cursor: pointer;
   text-decoration: none;
   font-weight: bold;
-  padding: 20px;
+  padding: 16px;
   transition: all 0.3s ease 0s;
 }
 
 #nav li:hover {
   background-color: #fff;
   color: #333;
+}
+
+#nav2 {
+  list-style: none;
+  display: flex;
+  position: absolute;
+  top: 52px;
+  left: 0px;
+}
+
+#nav2 li {
+  width: 120px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  transition: all 0.3s ease 0s;
+}
+
+#nav2 li a {
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 16px;
+  transition: all 0.3s ease 0s;
+}
+
+#nav2 li:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]+label{
+  cursor: pointer;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  transition: all 0.3s ease 0s;
+}
+
+input[type=checkbox]:checked + label{
+  width: 120px;
+  text-align: center;
+  background-color: #57ba64;
+  color: #110f21;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  transition: all 0.3s ease 0s;
+}
+
+input[type=checkbox] + label:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+input[type=checkbox]+label#but-switch-lab{
+  cursor: pointer;
+  font-weight: bold;
+  width: 120px;
+  text-align: center;
+  background-color: #c1bf3e;
+  color: #062440;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  transition: all 0.3s ease 0s;
+}
+
+input[type=checkbox]:checked + label#but-switch-lab{
+  width: 120px;
+  text-align: center;
+  background-color: #f0722b;
+  color: #120f21;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  transition: all 0.3s ease 0s;
 }

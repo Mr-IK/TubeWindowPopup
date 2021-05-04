@@ -1,5 +1,14 @@
 (function () {
   var isDark = false;
+  const butSwitchKey = 'butSwitchKey';
+
+  function parseURL(url){
+  	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+  	if(!url){return false;}
+  	var match = url.match(regExp);
+  	return (match && match[7].length == 11) ? match[7] : false;
+  }
+
   const createQuickButton = (className) => {
     let quickButton = document.createElement('button')
     var html = document.getElementsByTagName('html')[0]
@@ -17,8 +26,18 @@
     quickButton.innerHTML = '動画をポップアップ'
     quickButton.onclick = () => {
       let videoHref = quickButton.parentElement.parentElement.querySelector('a').href
-      let youtubeId = videoHref.match(/\/watch\?v=(.+)/)[1]
+      let youtubeId = parseURL(videoHref);
       chrome.runtime.sendMessage({youtubeId: youtubeId })
+      chrome.storage.local.get(butSwitchKey, value => {
+        if(value.butSwitchKey!=null){
+          butMode = value.butSwitchKey;
+          if(value.butSwitchKey){
+            quickButton.innerHTML = '動画を開きました！';
+          }else{
+            quickButton.innerHTML = 'URLを追加しました！';
+          }
+        }
+      });
     }
     return quickButton
   }
@@ -53,7 +72,7 @@
 
   const addQuickButton = () => {
 
-    let dismissableList = document.querySelectorAll('div#dismissable')
+    let dismissableList = document.querySelectorAll('div#dismissible')
     Array.prototype.forEach.call(dismissableList, dismissable => {
       if (dismissable.querySelector('.twp-button') === null && dismissable.querySelector('.twp-button-dark') === null && !dismissable.className.includes('ytd-shelf-renderer')) {
         let detail = dismissable.querySelector('div#buttons')
